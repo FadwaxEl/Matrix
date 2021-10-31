@@ -1,0 +1,6 @@
+﻿  Matrix.cpp
+C:\Users\admin\source\repos\StaticLib1Matrix\StaticLib1Matrix\Matrix.cpp(71): warning C4715: 'Mat::Matrix::operator+' : les chemins de contrôle ne retournent pas tous une valeur
+C:\Users\admin\source\repos\StaticLib1Matrix\StaticLib1Matrix\Matrix.cpp(124): warning C4715: 'Mat::Matrix::operator*' : les chemins de contrôle ne retournent pas tous une valeur
+C:\Users\admin\source\repos\StaticLib1Matrix\StaticLib1Matrix\Matrix.cpp(146): warning C4715: 'Mat::Matrix::operator==' : les chemins de contrôle ne retournent pas tous une valeur
+C:\Users\admin\source\repos\StaticLib1Matrix\StaticLib1Matrix\Matrix.cpp(92): warning C4715: 'Mat::Matrix::operator-' : les chemins de contrôle ne retournent pas tous une valeur
+  StaticLib1Matrix.vcxproj -> C:\Users\admin\source\repos\StaticLib1Matrix\Debug\StaticLib1Matrix.lib
