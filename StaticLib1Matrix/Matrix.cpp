@@ -7,12 +7,19 @@ Mat::Matrix::Matrix( int  l,  int  c)
 {
 	this->nbligne = l;
 	this->nbcolone = c;
+	//allocation de la memoire 
 	this->Matr = new int* [l];
 	for (int i = 0; i < l; i++)
 	{
 		this->Matr[i] = new int[c];
+		
+        /* for (int j=0; j<this->col; j++)
+		{
+		this->Matr[i][j]=0
+		}
+		*/
 	}
-
+    //initialisation 
 	for (int i = 0; i < l; i++)
 	{
 		for (int j = 0; j < c; j++)
@@ -33,17 +40,17 @@ void Mat::Matrix::Remplissage(int n)
 		}
 	}
 
-	// TODO: insérer une instruction return ici
+	// TODO: insÃ©rer une instruction return ici
 }
 
 Mat::Matrix::~Matrix()
 {
 	for (int i = 0; i < this->nbligne; i++)
 	{
-		delete this->Matr[i];
+		delete[] this->Matr[i];
 		this->Matr[i] = NULL;
 	}
-	delete this->Matr;
+	delete[] this->Matr;
 	this->Matr = NULL;
 
 
@@ -67,7 +74,7 @@ Matrix* Mat::Matrix::operator+(const Matrix& m)
 	catch (string e) {
 		cout << e << endl;
 	}
-	// TODO: insérer une instruction return ici
+	// TODO: insÃ©rer une instruction return ici
 }
 
 Matrix* Mat::Matrix::operator-(const Matrix& m)
@@ -88,7 +95,7 @@ Matrix* Mat::Matrix::operator-(const Matrix& m)
 	catch (string e) {
 		cout << e << endl;
 	}
-	// TODO: insérer une instruction return ici
+	// TODO: insÃ©rer une instruction return ici
 }
 
 Matrix* Mat::Matrix::operator*(const Matrix& m)
@@ -96,8 +103,9 @@ Matrix* Mat::Matrix::operator*(const Matrix& m)
 	assert(this->nbcolone == m.nbligne);
 	try {
 		if (this->nbcolone != m.nbligne) throw "ils ne sont pas compatibles";
+		//creation dynamique d'un element
 		Matrix* mat = new Matrix(this->nbligne, m.nbcolone);
-		cout << "\n * function" << endl;
+		cout << "\n ------------ function------------" << endl;
 		mat->print();
 
 		for (int i = 0; i < this->nbcolone; i++)
@@ -120,7 +128,7 @@ Matrix* Mat::Matrix::operator*(const Matrix& m)
 	}
 
 	
-	// TODO: insérer une instruction return ici
+	// TODO: insÃ©rer une instruction return ici
 }
 
 bool Mat::Matrix::operator==(const Matrix& m) const
@@ -142,7 +150,7 @@ bool Mat::Matrix::operator==(const Matrix& m) const
 			cout << e << endl;
 		}
 
-	// TODO: insérer une instruction return ici
+	// TODO: insÃ©rer une instruction return ici
 }
 
 void Mat::Matrix::print() const
